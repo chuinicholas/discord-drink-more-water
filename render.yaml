@@ -1,0 +1,16 @@
+services:
+  - type: worker
+    name: discord-drink-more-water-bot
+    env: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: DISCORD_TOKEN
+        sync: false
+      - key: GIRLFRIEND_USER_ID
+        sync: false
+      - key: BOT_OWNER_ID
+        sync: false
+      - key: WATER_CHANNEL_ID
+        sync: false
